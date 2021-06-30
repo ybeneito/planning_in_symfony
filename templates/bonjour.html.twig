@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+        {% block content %}
+            <!--Si la variable name de l'uri est yohan un message personnalisé apparaît sinon on salut notre utilisateur avec ses infos-->
+            {% if name == 'yohan' %}
+                <h1>Yo le Waz</h1>
+            {% else %}
+                <h1>Bonjour {{ name }}, tu as {{ age }} ans. </h1>
+            {% endif %}
+        
+        {% endblock %}
+
