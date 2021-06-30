@@ -1,10 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Hello TeamController!
-            
-        
-    
+    Les équipes
 {% endblock %}
 {% block content %}
     <div class="container mt-5">
@@ -14,17 +11,10 @@
                     <div class="col-lg-6">
                         <div class="section_title text-center pb-25">
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                Les équipes
-                                                                                                        
-                                                                                
-                                                            
+                                Les équipes 
                             </h4>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                                Voici la liste des équipes
-                                                                                                                                    que vous pouvez intégrer.
-                                                                                                        
-                                                                                
-                                                            
+                                Voici la liste des équipes que vous pouvez intégrer.                            
                             </p>
                         </div>
                     <!-- section title -->
@@ -32,36 +22,26 @@
                 </div>
                 <!-- row -->
                 <div class="row">
-
                     <div class="col-lg-4 col-md-6">
                         <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                             <img src="<?=$team['logo'] ?>"></img>
                             <br>
-                                <a href="#">
+                                <a href="/team-detail">
                                     <h4 class="features_title">
-                                        nom de team
-                                                                                                                                        
-                                                                                                        
-                                                                            
+                                        nom de team                                     
                                     </h4>
                                 </a>
                                 <p>
-                                    slogan
-                                                                                                                            
-                                                                                                                        
-                                                                                            
-                                                                    
+                                    slogan                                   
                                 </p>
                             </div>
                         <!-- single features -->
                         </div>
-
                     </div>
                 <!-- row -->
                 </div>
             <!-- container -->
             </section>
-
         </div>
     {% endblock %}
     

@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Hello TeamController!
-    
+    Cette équipe
 {% endblock %}
 
 {% block content %}
@@ -13,16 +12,13 @@
                     <div class="col-lg-6">
                         <div class="section_title text-center pb-25">
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                nom de team
-                                                            
+                                nom de team                      
                             </h4>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                                slogan
-                                                            
+                                slogan                  
                             </p>
                             <button type="button" class="btn btn-outline-primary mt-3">
-                                S'inscrire
-                                                            
+                                S'inscrire                           
                             </button>
                         </div>
                     <!-- section title -->
@@ -36,50 +32,39 @@
                                 <img src="<?= $team[0]["logo"]?>"></img>
                                 <h4 class="mt-2">
                                     nom de team
-                                                                    
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt labor
-                                                                                                    dolore magna .
-                                                                    
+                                    Lorem ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt labor dolore magna .                         
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-8 col-sm-10 mt-5">
                             <h5>
-                                Les Projets
-                                                            
+                                Les Projets                           
                             </h5>
-
                             <div class="projet pt-5">
-                                <a href="http://localhost:2000/bwb-by-planning-in-luv/index.php?page=projet-detail&id=<?= $project['project_id'] ?>">
-                                    nom de projet
-                                                                    
+                                <a href="/project-detail">
+                                    nom de projet                  
                                 </a>
                                 <div class="progress">
                                     <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="btn-container d-flex">
                                     <button type="button" class="btn btn-outline-primary">
-                                        S'inscrire
-                                                                            
+                                        S'inscrire                          
                                     </button>
                                     <button type="button" class="btn btn-outline-warning">
-                                        Modifier
-                                                                            
+                                        Modifier                           
                                     </button>
                                     <button type="button" class="btn btn-outline-danger">
-                                        Supprimer
-                                                                            
+                                        Supprimer                                          
                                     </button>
                                 </div>
                             </div>
-
                         </div>
                     <!-- Infos -->
                     </div>
                 </div>
-
             </div>
         <!-- row -->
         </div>

@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Hello ProjectController!
-    
+    Les projets
 {% endblock %}
 
 {% block content %}
@@ -13,13 +12,10 @@
                     <div class="col-lg-6">
                         <div class="section_title text-center pb-25">
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                Les projets
-                                                            
+                                Les projets                   
                             </h4>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                                Voici la liste des projets
-                                                                                        auxquels vous pouvez participer.
-                                                            
+                                Voici la liste des projets auxquels vous pouvez participer.                           
                             </p>
                         </div>
                     <!-- section title -->
@@ -27,26 +23,21 @@
                 </div>
                 <!-- row -->
                 <div class="row">
-
                     <div class="col-lg-4 col-md-6">
                         <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                             <img src="<?= $project['logo']?>"></img>
                             <br>
-                                <a href="#">
+                                <a href="project-detail">
                                     <h4 class="features_title">
-                                        nom du projet
-                                                                            
+                                        nom du projet                                        
                                     </h4>
                                 </a>
-
                                 <p>
-                                    Description
-                                                                    
+                                    Description                                      
                                 </p>
                             </div>
                         <!-- single features -->
                         </div>
-
                     </div>
                 <!-- row -->
                 </div>
