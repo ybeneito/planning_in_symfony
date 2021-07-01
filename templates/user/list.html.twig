@@ -23,41 +23,46 @@
                 </div>
                 <!-- row -->
                 <div class="row justify-content-center team_active">
-                    <div class="col-lg-4 col-md-8 col-sm-10">
-                        <div class="single_team mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                            <img src="<?= $user->logo ?>" alt="userpic">
-                                <div class="team_content">
-                                    <h4 class="team_name">
-                                        <a href="/user-detail">
-                                            nom prenom                                          
-                                        </a>
-                                    </h4>
-                                    <p>
-                                        user email                                     
-                                    </p>
-                                    <ul class="social">
-                                        <li>
-                                            <a href="#0">
-                                                <i class="lni lni-facebook-filled"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">
-                                                <i class="lni lni-twitter-original"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">
-                                                <i class="lni lni-linkedin-original"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        <!-- single team -->
+                {% for user in users %}    
+                <div class="col-lg-4 col-md-8 col-sm-10">              
+                <div class="single_team mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">              
+                <img src="https://via.placeholder.com/150" alt="userpic">
+                        <div class="team_content">
+                            <h4 class="team_name">
+                                <a href="/user-detail/{{ user.id }}">
+                                    {{ user.firstname }} {{ user.lastname }}                                         
+                                </a>
+                            </h4>
+                            <p>
+                                {{ user.email }}                                     
+                            </p>
+                            <ul class="social">
+                                <li>
+                                    <a href="#0">
+                                        <i class="lni lni-facebook-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        <i class="lni lni-twitter-original"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        <i class="lni lni-linkedin-original"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                <!-- single team -->
                 </div>
+            {% endfor %} 
+            </div>
+        
+        </div>    
+                
+                
             <!-- container -->
             </section>
         </div>

@@ -12,10 +12,10 @@
                     <div class="col-lg-6">
                         <div class="section_title text-center pb-25">
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                nom de team                      
+                                {{team.name}}                   
                             </h4>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                                slogan                  
+                                {{team.slogan}}                  
                             </p>
                             <button type="button" class="btn btn-outline-primary mt-3">
                                 S'inscrire                           
@@ -29,12 +29,12 @@
                     <div class="row justify-content-center team_active">
                         <div class="col-lg-4 col-md-8 col-sm-10">
                             <div class="single_features mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                <img src="<?= $team[0]["logo"]?>"></img>
+                                <img src="{{team.logo}}"></img>
                                 <h4 class="mt-2">
-                                    nom de team
+                                    {{team.name}}
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt labor dolore magna .                         
+                                    {{team.slogan}}                         
                                 </p>
                             </div>
                         </div>

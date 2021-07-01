@@ -23,18 +23,21 @@
                 <!-- row -->
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                            <img src="<?=$team['logo'] ?>"></img>
-                            <br>
-                                <a href="/team-detail">
-                                    <h4 class="features_title">
-                                        nom de team                                     
-                                    </h4>
-                                </a>
-                                <p>
-                                    slogan                                   
-                                </p>
-                            </div>
+                    {% for team in teams %}
+                    <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                <img src="{{team.logo}}"></img>
+                <br>
+                    <a href="/team-detail/{{team.id}}">
+                        <h4 class="features_title">
+                           {{ team.name }}                                    
+                        </h4>
+                    </a>
+                    <p>
+                        {{team.slogan}}                                   
+                    </p>
+                </div>
+                    {% endfor %}
+                       
                         <!-- single features -->
                         </div>
                     </div>
