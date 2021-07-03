@@ -21,8 +21,9 @@
                 </div>
                 <!-- row -->
                 <div class="row">
+                {% for team in teams %}
                     <div class="col-lg-4 col-md-6">
-                    {% for team in teams %}
+                   
                     <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                 <img src="{{team.logo}}"></img>
                 <br>
@@ -35,10 +36,12 @@
                         {{team.slogan}}                                   
                     </p>
                 </div>
-                    {% endfor %}
+                  
                        
                         <!-- single features -->
+                    
                         </div>
+                    {% endfor %}
                     </div>
                 <!-- row -->
                 </div>

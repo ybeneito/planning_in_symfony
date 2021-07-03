@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 {% block title %}
-    Ce projet
+    {{project.name}}
 {% endblock %}
 
 {% block content %}
@@ -10,10 +10,10 @@
                     <div class="col-lg-6">
                         <div class="section_title text-center pb-25">
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                nom du projet                            
+                                {{project.name}}                            
                             </h4>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                                description                            
+                                {{project.description}}                            
                             </p>
                             <button type="button" class="btn btn-outline-primary mt-3">
                                 S'inscrire                            
@@ -27,9 +27,9 @@
                     <div class="row justify-content-center team_active">
                         <div class="col-lg-4 col-md-8 col-sm-10">
                             <div class="single_features mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                <img src="<?= $project[0]['logo']?>"></img>
+                                <img src="{{project.logo}}"></img>
                                 <h4 class="mt-2">
-                                    nom du projet                      
+                                    {{project.name }}                   
                                 </h4>
                                 <h5 class="mt-2">
                                     <a class="text-primary" href="/team-detail">

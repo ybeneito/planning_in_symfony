@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjectsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -47,6 +49,21 @@ class Projects
      * @ORM\JoinColumn(nullable=false)
      */
     private $team;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Teams::class, mappedBy="projects")
+     */
+    private $teams;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Tickets::class, inversedBy="project")
+     */
+    private $tickets;
+
+    public function __construct()
+    {
+        $this->teams = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -121,6 +138,48 @@ class Projects
     public function setTeam(Teams $team): self
     {
         $this->team = $team;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Teams[]
+     */
+    public function getTeams(): Collection
+    {
+        return $this->teams;
+    }
+
+    public function addTeam(Teams $team): self
+    {
+        if (!$this->teams->contains($team)) {
+            $this->teams[] = $team;
+            $team->setProjects($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTeam(Teams $team): self
+    {
+        if ($this->teams->removeElement($team)) {
+            // set the owning side to null (unless already changed)
+            if ($team->getProjects() === $this) {
+                $team->setProjects(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTickets(): ?Tickets
+    {
+        return $this->tickets;
+    }
+
+    public function setTickets(?Tickets $tickets): self
+    {
+        $this->tickets = $tickets;
 
         return $this;
     }

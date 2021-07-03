@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
         <section id="services" class="features_area pt-3">
             <div class="container">
                 <div class="row justify-content-center">
@@ -14,9 +13,6 @@
                             <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                                 Les projets                   
                             </h4>
-                            <pre>
-                                {{ dump(projects) }}
-                            </pre>
                             <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">
                                 Voici la liste des projets auxquels vous pouvez participer.                           
                             </p>
@@ -26,26 +22,29 @@
                 </div>
                 <!-- row -->
                 <div class="row">
+                    {% for project in projects %}
                     <div class="col-lg-4 col-md-6">
-                        <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                            <img src="<?= $project['logo']?>"></img>
-                            <br>
-                                <a href="project-detail">
-                                    <h4 class="features_title">
-                                        nom du projet                                        
-                                    </h4>
-                                </a>
-                                <p>
-                                    Description                                      
-                                </p>
-                            </div>
-                        <!-- single features -->
+                    <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                        <img src="{{project.logo}}"></img>
+                        <br>
+                            <a href="project-detail/{{project.id}}">
+                                <h4 class="features_title">
+                                   {{project.name}}                                       
+                                </h4>
+                            </a>
+                            <p>
+                                {{project.description}}                                
+                            </p>
                         </div>
+                    <!-- single features -->
                     </div>
+                {% endfor %}
+                </div>
+                  
+                   
                 <!-- row -->
                 </div>
             <!-- container -->
             </section>
-        </div>
     {% endblock %}
     
