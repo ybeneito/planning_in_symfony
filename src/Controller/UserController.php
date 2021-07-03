@@ -35,11 +35,6 @@ class UserController extends AbstractController
             'No user found for id '.$id
         );
         }
-
-    // return new Response('Check out this great user: '.$user->getUsername());
-
-    // or render a template
-    // in the template, print things with {{ user.username }}
     return $this->render('user/detail.html.twig', ['user' => $user]);
     }
 
