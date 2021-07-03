@@ -22,25 +22,22 @@
                 <!-- row -->
                 <div class="row">
                 {% for team in teams %}
-                    <div class="col-lg-4 col-md-6">
-                   
-                    <div class="single_features text-center mt-60 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                <img src="{{team.logo}}"></img>
-                <br>
-                    <a href="/team-detail/{{team.id}}">
-                        <h4 class="features_title">
-                           {{ team.name }}                                    
-                        </h4>
-                    </a>
-                    <p>
-                        {{team.slogan}}                                   
-                    </p>
-                </div>
-                  
-                       
-                        <!-- single features -->
-                    
+                <div class="col-lg-4 col-md-8 col-sm-10 mt-3">              
+                <div class="single_team mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">              
+                <img src="{{team.logo}}" alt="userpic">
+                        <div class="team_content">
+                            <h4 class="team_name">
+                                <a href="/team-detail/{{ team.id }}">
+                                    {{ team.name }}                                         
+                                </a>
+                            </h4>
+                            <p>
+                                {{ team.slogan }}                                     
+                            </p>
                         </div>
+                    </div>
+                <!-- single team -->
+                </div>
                     {% endfor %}
                     </div>
                 <!-- row -->
