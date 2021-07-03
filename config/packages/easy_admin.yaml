@@ -1,4 +1,18 @@
-easy_admin: 
+easy_admin:
+  design:
+    menu:
+      - label: 'Planning'
+        children:
+          - {Entity: 'Users', label: Users}
+          - {Entity: 'Teams', label: Teams}
+          - {Entity: 'Projects', label: Projects}
+          - {Entity: 'Tickets', label: Tickets}
   entities:
-    - App\Entity\Users
-    - App\Entity\Teams
+    Users:
+      class: App\Entity\Users
+    Teams:
+      class: App\Entity\Teams
+    Projects:
+      class: App\Entity\Projects
+    Tickets:
+      class: App\Entity\Tickets

@@ -2,7 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Projects;
 use App\Entity\Teams;
+use App\Entity\Users;
+use App\Entity\Tickets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -32,10 +35,6 @@ class DashboardController extends AbstractDashboardController
 
          return $this->redirect($routeBuilder->setController(UsersCrudController::class)->generateUrl());
  
-         // you can also redirect to different pages depending on the current user
-         if ('jane' === $this->getUser()->getUsername()) {
-             return $this->redirect('...');
-         }
  
          // you can also render some template to display a proper Dashboard
          // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
@@ -45,13 +44,17 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Testsymfo');
+            ->setTitle('Planning_Admin');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-map-maker-alt', Users::class);
         yield MenuItem::linkToCrud('Teams', 'fas fa-map-maker-alt', Teams::class);
+        yield MenuItem::linkToCrud('Projects', 'fas fa-map-maker-alt', Projects::class);
+        yield MenuItem::linkToCrud('Tickets', 'fas fa-map-maker-alt', Tickets::class);
+
     }
 }
