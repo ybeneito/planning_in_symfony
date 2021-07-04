@@ -44,16 +44,16 @@ class Projects
      */
     private $end;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Teams::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $team;
+    // /**
+    //  * @ORM\OneToOne(targetEntity=Teams::class, cascade={"persist", "remove"})
+    //  * @ORM\JoinColumn(nullable=false)
+    //  */
+    // private $team;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Teams::class, mappedBy="projects")
-     */
-    private $teams;
+    // /**
+    //  * @ORM\OneToMany(targetEntity=Teams::class, mappedBy="projects")
+    //  */
+    // private $teams;
 
     /**
      * @ORM\ManyToOne(targetEntity=Tickets::class, inversedBy="project")
