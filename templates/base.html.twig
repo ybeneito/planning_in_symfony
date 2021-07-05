@@ -41,16 +41,28 @@
                                 Projets                          
                             </a>
                         </li>
+                        {# Ajoute le lien admin si l'user est un admin #}
+                        {% if app.user %}
+                            {% for role in app.user.roles %}
+                                {% if role == 'ROLE_ADMIN' %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin" role="button" aria-expanded="false">
+                                        Administration                          
+                                    </a>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                       
+                       
+                         {# Ajoute le lien /logout si l'user est connecté #}
+                        {% if app.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/signin" role="button" aria-expanded="false">
-                                S'inscrire                  
+                            <a class="nav-link" href="/logout" role="button" aria-expanded="false">
+                                Se deconnecter                          
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login" role="button" aria-expanded="false">
-                                Se connecter                          
-                            </a>
-                        </li>
+                    {% endif %}
                     </li>
                 </ul>
             </div>

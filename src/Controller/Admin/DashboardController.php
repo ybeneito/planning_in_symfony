@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Secuser;
 use App\Entity\Projects;
 use App\Entity\Teams;
 use App\Entity\Users;
@@ -54,6 +55,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Équipes', 'fas fa-users', Teams::class);
         yield MenuItem::linkToCrud('Projets', 'fas fa-briefcase', Projects::class);
         yield MenuItem::linkToCrud('Tickets', 'fa fa-ticket', Tickets::class);
+        yield MenuItem::linkToCrud('Secuser', 'fa fa-ticket', Secuser::class);
 
     }
 }

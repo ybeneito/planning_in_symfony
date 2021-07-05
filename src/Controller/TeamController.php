@@ -32,28 +32,6 @@ class TeamController extends AbstractController
             'team' => $team
         ]);
     }
-
-    #[Route('/team/add', name: 'newteam')]
-    public function createTeam(): Response
-    {
-        // you can fetch the EntityManager via $this->getDoctrine()
-        // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
-        $entityManager = $this->getDoctrine()->getManager();
-
-        $team = new Teams();
-        $team->setName('La New Team');
-        $team->setSlogan('jdqskfljmlfjqkfjqfqdlfq');
-        $team->setLogo('https://via.placeholder.com/150');
-
-       
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($team);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return new Response('Saved new user with id '.$team->getId());
-    }
 }
 
 

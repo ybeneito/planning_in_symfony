@@ -39,29 +39,4 @@ class ProjectController extends AbstractController
             'project' => $project,
         ]);
     }
-
-    // A finir
-    //  #[Route('/project/add', name: 'newproj')]
-    //  public function createProj(): Response
-    //  {
-    //      // you can fetch the EntityManager via $this->getDoctrine()
-    //      // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
-    //      $entityManager = $this->getDoctrine()->getManager();
-    //      $date = new DateTime('now');
-    //      $project = new Projects();
-    //      $project->setName('Le premier projet');
-    //      $project->setDescription('Comme dans toutes les entreprise toujours le plus important.');
-    //      $project->setLogo('https://via.placeholder.com/150');
-    //      $project->setStart($date);
-         
- 
-        
-    //      // tell Doctrine you want to (eventually) save the Product (no queries yet)
-    //      $entityManager->persist($project);
- 
-    //      // actually executes the queries (i.e. the INSERT query)
-    //      $entityManager->flush();
- 
-    //      return new Response('Saved new user with id '.$user->getId());
-    //  }
 }
